@@ -2,12 +2,18 @@
   "name": "demhang",
   "version": "0.1.0",
   "private": true,
+  "watch": {
+    "test": "{src, test}/*.ts"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "watch": "npm-watch"
   },
   "dependencies": {
+    "npm-watch": "^0.7.0",
+    "ant-design-vue": "^1.7.2",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
