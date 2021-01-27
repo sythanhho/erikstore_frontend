@@ -4,8 +4,8 @@ import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
-const Foo = Vue.component('Foo', { template: '<div>foo</div>' });
-const Bar = Vue.component('Bar', { template: '<div>bar</div>' });
+const Foo = Vue.component("Foo", { template: "<div>foo</div>" });
+const Bar = Vue.component("Bar", { template: "<div>bar</div>" });
 
 const routes: Array<RouteConfig> = [
   {
@@ -24,7 +24,8 @@ const routes: Array<RouteConfig> = [
         path: "/goods",
         name: "Hang hoa",
         components: {
-          bodyview: Bar}
+          bodyview: Bar
+        }
       }
     ]
   },
@@ -37,7 +38,6 @@ const routes: Array<RouteConfig> = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue")
   }
-  
 ];
 
 const router = new VueRouter({

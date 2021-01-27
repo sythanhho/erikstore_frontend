@@ -1,1 +1,1 @@
-module.exports = { runtimeCompiler: false }
+module.exports = { runtimeCompiler: true }

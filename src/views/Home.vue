@@ -1,10 +1,10 @@
 <template>
   <div class="home">
     <AppBar />
-    <NavBar />
-    <Body />
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <!-- <NavBar /> -->
+    <!-- <Body /> -->
+    <!-- <img alt="Vue logo" src="../assets/logo.png" />
+    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" /> -->
   </div>
 </template>
 
