@@ -4,14 +4,16 @@
     ><v-checkbox
       v-model="dchecked"
       :label="label"
+      color="green"
       @change="changeColor"
     ></v-checkbox>
+    <a href="#" ref="detail">Chi tiết</a>
   </v-col>
 </template>
 
 <script>
 export default {
-  props: ["label", "icon", "checked", "color"],
+  props: ["label", "icon", "checked", "color", "detail"],
   // eslint-disable-next-line prettier/prettier
   data: function () {
     return {
@@ -19,6 +21,13 @@ export default {
       dchecked: this.checked,
       dcolor: this.color
     };
+  },
+  mounted: function() {
+    if (this.detail) {
+      this.$refs.detail.style.display = "block";
+    } else {
+      this.$refs.detail.style.display = "none";
+    }
   },
   methods: {
     changeColor(evt) {

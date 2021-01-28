@@ -48,5 +48,8 @@
   },
   "watch": {
     "test": "{src, test}/*.ts"
+  },
+  "prettier": {
+    "arrowParens": "always"
   }
 }

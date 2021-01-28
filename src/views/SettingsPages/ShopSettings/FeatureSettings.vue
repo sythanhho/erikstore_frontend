@@ -9,6 +9,7 @@
           :icon="feature.icon"
           :checked="feature.defaultValue"
           :color="feature.defaultColor"
+          :detail="feature.detail"
         />
       </v-row>
       <v-row>
@@ -19,28 +20,41 @@
           :icon="feature.icon"
           :checked="feature.defaultValue"
           :color="feature.defaultColor"
+          :detail="feature.detail"
         />
       </v-row>
       <v-row>
-        <feature-check />
-        <feature-check />
-        <feature-check />
-        <feature-check />
-        <feature-check />
+        <feature-check
+          v-for="feature in featureRow3"
+          :key="feature.label"
+          :label="feature.label"
+          :icon="feature.icon"
+          :checked="feature.defaultValue"
+          :color="feature.defaultColor"
+          :detail="feature.detail"
+        />
       </v-row>
       <v-row>
-        <feature-check />
-        <feature-check />
-        <feature-check />
-        <feature-check />
-        <feature-check />
+        <feature-check
+          v-for="feature in featureRow4"
+          :key="feature.label"
+          :label="feature.label"
+          :icon="feature.icon"
+          :checked="feature.defaultValue"
+          :color="feature.defaultColor"
+          :detail="feature.detail"
+        />
       </v-row>
       <v-row>
-        <feature-check />
-        <feature-check />
-        <feature-check />
-        <feature-check />
-        <feature-check />
+        <feature-check
+          v-for="feature in featureRow5"
+          :key="feature.label"
+          :label="feature.label"
+          :icon="feature.icon"
+          :checked="feature.defaultValue"
+          :color="feature.defaultColor"
+          :detail="feature.detail"
+        />
       </v-row>
     </v-container>
   </v-form>
@@ -57,31 +71,36 @@ export default {
         label: "Giá vốn trung bình",
         icon: "mdi-tag-multiple",
         defaultValue: true,
-        defaultColor: "primary"
+        defaultColor: "primary",
+        detail: false
       },
       {
         label: "Sản phẩm có thuộc tính",
         icon: "mdi-puzzle",
         defaultValue: true,
-        defaultColor: "primary"
+        defaultColor: "primary",
+        detail: false
       },
       {
         label: "Sản phẩm có đơn vị tính",
         icon: "mdi-arrow-expand-all",
         defaultValue: true,
-        defaultColor: "primary"
+        defaultColor: "primary",
+        detail: false
       },
       {
         label: "Quản lý tồn kho theo mã ma ý (Serial/IMEI)",
         icon: "mdi-cube",
         defaultValue: true,
-        defaultColor: "primary"
+        defaultColor: "primary",
+        detail: false
       },
       {
         label: "Tính năng sản xuất hàng hóa",
         icon: "mdi-cog",
         defaultValue: true,
-        defaultColor: "primary"
+        defaultColor: "primary",
+        detail: false
       }
     ],
     featureRow2: [
@@ -89,127 +108,148 @@ export default {
         label: "Hàng hóa theo lô, hạn sử dụng",
         icon: "mdi-calendar-range",
         defaultValue: true,
-        defaultColor: "primary"
+        defaultColor: "primary",
+        detail: false
       },
       {
         label: "Tính năng giao hàng",
         icon: "mdi-truck-delivery",
         defaultValue: true,
-        defaultColor: "primary"
+        defaultColor: "primary",
+        detail: true
       },
       {
         label: "Sử dụng cân điện tử",
         icon: "mdi-scale",
         defaultValue: true,
-        defaultColor: "primary"
+        defaultColor: "primary",
+        detail: true
       },
       {
         label: "Tính năng đặt hàng",
         icon: "mdi-store",
         defaultValue: true,
-        defaultColor: "primary"
+        defaultColor: "primary",
+        detail: false
       },
       {
         label: "Cho phép đặt hàng khi hết tồn kho",
         icon: "mdi-alert",
         defaultValue: true,
-        defaultColor: "primary"
+        defaultColor: "primary",
+        detail: false
       }
     ],
     featureRow3: [
       {
-        label: "Giá vốn trung bình",
-        icon: "mdi-tag-multiple",
+        label:
+          "Bán hàng, Chuyển hàng, Trả hàng nhập, Sản xuất, Xuất hủy khi hết tồn kho",
+        icon: "mdi-folder-alert",
         defaultValue: true,
-        defaultColor: "primary"
+        defaultColor: "primary",
+        detail: false
       },
       {
-        label: "Giá vốn trung bình",
-        icon: "mdi-tag-multiple",
+        label: "Tính năng thu khác khi bán hàng",
+        icon: "mdi-cart-plus",
         defaultValue: true,
-        defaultColor: "primary"
+        defaultColor: "primary",
+        detail: false
       },
       {
-        label: "Giá vốn trung bình",
-        icon: "mdi-tag-multiple",
+        label: "Bán hàng, Chuyển hàng khi sản phẩm đã được Đặt hàng",
+        icon: "mdi-bag-suitcase",
         defaultValue: true,
-        defaultColor: "primary"
+        defaultColor: "primary",
+        detail: false
       },
       {
-        label: "Giá vốn trung bình",
-        icon: "mdi-tag-multiple",
-        defaultValue: true,
-        defaultColor: "primary"
+        label: "Không cho phép thay đổi thời gian giao dịch",
+        icon: "mdi-clock-time-nine",
+        defaultValue: false,
+        defaultColor: "grey",
+        detail: false
       },
       {
-        label: "Giá vốn trung bình",
-        icon: "mdi-tag-multiple",
+        label: "Hiển thị tổng số lượng hàng hóa trên chứng từ",
+        icon: "mdi-file-document",
         defaultValue: true,
-        defaultColor: "primary"
+        defaultColor: "primary",
+        detail: false
       }
     ],
     featureRow4: [
       {
-        label: "Giá vốn trung bình",
-        icon: "mdi-tag-multiple",
-        defaultValue: true,
-        defaultColor: "primary"
+        label: "Không cho phép in báo giá khi bán hàng",
+        icon: "mdi-printer",
+        defaultValue: false,
+        defaultColor: "grey",
+        detail: false
       },
       {
-        label: "Giá vốn trung bình",
-        icon: "mdi-tag-multiple",
+        label: "Tính năng tích điểm",
+        icon: "mdi-star-circle",
         defaultValue: true,
-        defaultColor: "primary"
+        defaultColor: "primary",
+        detail: true
       },
       {
-        label: "Giá vốn trung bình",
-        icon: "mdi-tag-multiple",
+        label: "Tính năng gửi SMS - Email - Tin nhắn Zalo",
+        icon: "mdi-send",
         defaultValue: true,
-        defaultColor: "primary"
+        defaultColor: "primary",
+        detail: true
       },
       {
-        label: "Giá vốn trung bình",
-        icon: "mdi-tag-multiple",
-        defaultValue: true,
-        defaultColor: "primary"
+        label: "Giới hạn thời gian trả hàng",
+        icon: "mdi-credit-card-clock",
+        defaultValue: false,
+        defaultColor: "grey",
+        detail: false
       },
       {
-        label: "Giá vốn trung bình",
-        icon: "mdi-tag-multiple",
+        label: "Tính năng khóa sổ",
+        icon: "mdi-folder-lock",
         defaultValue: true,
-        defaultColor: "primary"
+        defaultColor: "primary",
+        detail: true
       }
     ],
     featureRow5: [
       {
-        label: "Giá vốn trung bình",
-        icon: "mdi-tag-multiple",
-        defaultValue: true,
-        defaultColor: "primary"
+        label: "Quản lý khách hàng theo chi nhánh",
+        icon: "mdi-map-marker",
+        defaultValue: false,
+        defaultColor: "grey",
+        detail: false
       },
       {
-        label: "Giá vốn trung bình",
-        icon: "mdi-tag-multiple",
+        label: "Sử dụng tính năng khuyến mại",
+        icon: "mdi-gift",
         defaultValue: true,
-        defaultColor: "primary"
+        defaultColor: "primary",
+        detail: true
       },
       {
-        label: "Giá vốn trung bình",
-        icon: "mdi-tag-multiple",
+        label: "Tích hợp bán hàng qua các kênh mạng xã hội",
+        icon: "mdi-account-group",
         defaultValue: true,
-        defaultColor: "primary"
+        defaultColor: "primary",
+        detail: true
       },
       {
-        label: "Giá vốn trung bình",
-        icon: "mdi-tag-multiple",
+        label: "Hỗ trợ các khoản chi phí nhập hàng",
+        icon: "mdi-handshake",
         defaultValue: true,
-        defaultColor: "primary"
+        defaultColor: "primary",
+        detail: false
       },
       {
-        label: "Giá vốn trung bình",
-        icon: "mdi-tag-multiple",
+        label: "Tính năng voucher",
+        icon: "mdi-ticket-percent",
         defaultValue: true,
-        defaultColor: "primary"
+        defaultColor: "primary",
+        detail: true
       }
     ]
   })
