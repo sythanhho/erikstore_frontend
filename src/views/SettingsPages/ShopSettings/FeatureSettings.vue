@@ -1,6 +1,6 @@
 <template>
   <v-form>
-    <v-container>
+    <v-container fluid>
       <v-row>
         <feature-check
           v-for="feature in featureRow1"

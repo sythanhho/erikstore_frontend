@@ -2,37 +2,54 @@
   <v-col cols="12" md="2">
     <v-dialog v-model="groupEditDialog" width="500">
       <v-card>
-        <v-card-title class="headline grey lighten-2">
-          Sửa nhóm hàng
-        </v-card-title>
-        <v-form>
-          <v-text-field label="Tên nhóm" v-model="editGroupName"></v-text-field>
-          <v-select
-            :items="extendedGroup"
-            item-text="name"
-            item-value="id"
-            label="Nhóm cha"
-            placeholder="---Lựa chọn---"
-            v-model="editGroupParent"
-          >
-          </v-select>
-        </v-form>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="green" text @click="updateGroup">
-            <v-icon>mdi-content-save</v-icon>
-            Lưu
-          </v-btn>
-          <v-btn color="grey" text @click="groupEditDialog = false">
-            <v-icon>mdi-cancel</v-icon>
-            Bỏ qua
-          </v-btn>
-          <v-btn color="warning" text @click="deleteGroup">
-            <v-icon>mdi-trash-can</v-icon>
-            Xóa
-          </v-btn>
-        </v-card-actions>
+        <v-container class="pa-8">
+          <v-row>
+            <v-col>
+              <v-card-title class="headline lighten-2 pa-0">
+                Sửa nhóm hàng
+              </v-card-title> </v-col
+            ><v-spacer />
+            <v-btn icon @click="groupEditDialog = false"
+              ><v-icon>mdi-close</v-icon></v-btn
+            >
+          </v-row>
+          <v-row>
+            <v-col>
+              <v-form>
+                <v-text-field
+                  label="Tên nhóm"
+                  v-model="editGroupName"
+                  outlined
+                ></v-text-field>
+                <v-select
+                  :items="extendedGroup"
+                  item-text="name"
+                  item-value="id"
+                  label="Nhóm cha"
+                  placeholder="---Lựa chọn---"
+                  v-model="editGroupParent"
+                  outlined
+                >
+                </v-select>
+              </v-form>
+            </v-col>
+          </v-row>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="green" text @click="updateGroup">
+              <v-icon>mdi-content-save</v-icon>
+              Lưu
+            </v-btn>
+            <v-btn color="grey" text @click="groupEditDialog = false">
+              <v-icon>mdi-cancel</v-icon>
+              Bỏ qua
+            </v-btn>
+            <v-btn color="warning" text @click="deleteGroup">
+              <v-icon>mdi-trash-can</v-icon>
+              Xóa
+            </v-btn>
+          </v-card-actions>
+        </v-container>
       </v-card>
     </v-dialog>
     <v-expansion-panels v-model="expansionPanels" multiple>
@@ -100,81 +117,102 @@
                 v-on="on"
                 @click="extendGroups"
               >
-                <v-icon>mdi-plus-circle</v-icon>
+                <v-icon>mdi-plus</v-icon>
               </v-btn>
             </template>
 
             <v-card>
-              <v-card-title class="headline grey lighten-2">
-                Thêm nhóm hàng
-              </v-card-title>
-              <v-form>
-                <v-text-field
-                  label="Tên nhóm"
-                  v-model="newGroupName"
-                ></v-text-field>
-                <v-select
-                  :items="extendedGroup"
-                  item-text="name"
-                  item-value="id"
-                  label="Nhóm cha"
-                  placeholder="---Lựa chọn---"
-                  v-model="newGroupParent"
-                >
-                </v-select>
-              </v-form>
-
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn color="green" text @click="addGroup">
-                  <v-icon>mdi-content-save</v-icon>
-                  Lưu
-                </v-btn>
-                <v-btn color="grey" text @click="dialog = false">
-                  <v-icon>mdi-cancel</v-icon>
-                  Bỏ qua
-                </v-btn>
-              </v-card-actions>
+              <v-container class="pa-8">
+                <v-row>
+                  <v-col>
+                    <v-card-title class="headline lighten-2 pa-0">
+                      Thêm nhóm hàng
+                    </v-card-title>
+                  </v-col>
+                  <v-spacer></v-spacer>
+                  <v-btn icon @click="dialog = false"
+                    ><v-icon>mdi-close</v-icon></v-btn
+                  >
+                </v-row>
+                <v-row>
+                  <v-col>
+                    <v-form>
+                      <v-text-field
+                        label="Tên nhóm"
+                        v-model="newGroupName"
+                        outlined
+                      ></v-text-field>
+                      <v-select
+                        :items="extendedGroup"
+                        item-text="name"
+                        item-value="id"
+                        label="Nhóm cha"
+                        placeholder="---Lựa chọn---"
+                        v-model="newGroupParent"
+                        outlined
+                      >
+                      </v-select>
+                    </v-form>
+                  </v-col>
+                </v-row>
+                <v-card-actions class="pa-0">
+                  <v-spacer></v-spacer>
+                  <v-btn color="green" text @click="addGroup">
+                    <v-icon>mdi-content-save</v-icon>
+                    Lưu
+                  </v-btn>
+                  <v-btn color="grey" text @click="dialog = false">
+                    <v-icon>mdi-cancel</v-icon>
+                    Bỏ qua
+                  </v-btn>
+                </v-card-actions>
+              </v-container>
             </v-card>
           </v-dialog>
         </v-expansion-panel-header>
         <v-expansion-panel-content>
-          <v-row justify="center" align="center">
-            <v-col> <v-icon>mdi-magnify</v-icon> </v-col
-            ><v-col cols="9">
-              <v-text-field
-                v-model="groupSearch"
-                @input="searchGroup"
-              ></v-text-field
-            ></v-col>
-          </v-row>
-          <v-card class="mx-auto" max-width="300" tile>
-            <v-list flat>
-              <v-list-item-group color="primary">
+          <v-text-field
+            v-model="groupSearch"
+            prepend-inner-icon="mdi-magnify"
+            @input="searchGroup"
+            hide-details="auto"
+            class="pb-1 pt-0"
+          ></v-text-field>
+          <v-card class="mx-auto" flat>
+            <v-list class="pt-1">
+              <v-list-item-group>
                 <v-list-item
                   v-for="(item, i) in groupHolder"
                   :key="i"
                   @mouseover="displayEditButton(item)"
                   @mouseleave="hideEditButton"
+                  class="pa-0"
+                  dense
                 >
-                  <v-list-item-content>
-                    <v-row>
-                      <v-col xs="11" sm="8">
-                        <v-list-item-title
-                          v-text="item.name"
-                        ></v-list-item-title> </v-col
-                      ><v-col xs="1" sm="1">
-                        <v-btn
-                          v-if="item === showEditButton"
-                          icon
-                          right
-                          max-width="35"
-                          @click="openEditDialog(item)"
-                          v-model="showEditButton"
-                          ><v-icon>mdi-pencil</v-icon></v-btn
-                        >
-                      </v-col>
-                    </v-row>
+                  <v-list-item-content class="pa-0">
+                    <v-container fluid class="pa-0">
+                      <v-row align="center" no-gutters>
+                        <v-col md="9" lg="10" xl="6">
+                          <div style="height:30px" class="d-flex">
+                            <v-list-item-title
+                              v-text="item.name"
+                              class="text-md-body-1"
+                            ></v-list-item-title>
+                          </div> </v-col
+                        ><v-col md="3" lg="2" xl="6">
+                          <v-btn
+                            v-if="item === showEditButton"
+                            icon
+                            right
+                            max-width="30"
+                            max-height="30"
+                            @click="openEditDialog(item)"
+                            v-model="showEditButton"
+                            ><v-icon>mdi-pencil</v-icon></v-btn
+                          >
+                        </v-col>
+                      </v-row>
+                    </v-container>
                   </v-list-item-content>
                 </v-list-item>
               </v-list-item-group>
@@ -206,14 +244,14 @@
 export default {
   name: "SideBar",
   created() {
-    fetch("http://localhost:8000/api/good-groups/")
-      // eslint-disable-next-line prettier/prettier
-      .then(r => r.json())
-      // eslint-disable-next-line prettier/prettier
-      .then(d => {
-        this.groups = d;
+    fetch("http://localhost:8000/graphql/?query={goodGroups{id,name,parent}}")
+      .then(response => response.json())
+      .then(result => {
+        console.log(result);
+        this.groups = result.data.goodGroups;
         this.groupHolder = [...this.groups];
-      });
+      })
+      .catch(error => console.log("error", error));
   },
   data() {
     return {

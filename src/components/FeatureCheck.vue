@@ -1,12 +1,15 @@
 <template>
-  <v-col cols="10" md="2">
-    <v-icon :color="dcolor">{{ icon }}</v-icon
-    ><v-checkbox
-      v-model="dchecked"
-      :label="label"
-      color="green"
-      @change="changeColor"
-    ></v-checkbox>
+  <v-col md="2" lg="2">
+    <div style="text-align:center">
+      <v-icon :color="dcolor" x-large>{{ icon }}</v-icon>
+    </div>
+    <v-checkbox v-model="dchecked" color="green" @change="changeColor">
+      <template v-slot:label>
+        <div>
+          {{ label }}
+        </div>
+      </template>
+    </v-checkbox>
     <a href="#" ref="detail">Chi tiết</a>
   </v-col>
 </template>
@@ -15,7 +18,7 @@
 export default {
   props: ["label", "icon", "checked", "color", "detail"],
   // eslint-disable-next-line prettier/prettier
-  data: function () {
+  data: function() {
     return {
       // eslint-disable-next-line no-unused-labels
       dchecked: this.checked,

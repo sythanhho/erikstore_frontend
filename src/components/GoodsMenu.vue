@@ -1,7 +1,7 @@
 <template>
   <v-menu offset-y>
     <template v-slot:activator="{ on, attrs }">
-      <v-btn color="primary" dark v-bind="attrs" v-on="on"
+      <v-btn depressed color="white" v-bind="attrs" v-on="on" class="text-none"
         ><v-icon>mdi-cube</v-icon> Hàng hóa
       </v-btn>
     </template>
