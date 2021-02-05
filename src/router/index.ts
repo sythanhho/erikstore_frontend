@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
+import Home from "@/views/Home.vue";
 import Overview from "@/views/Overview.vue";
 import Report from "@/views/Report.vue";
 import ShopSettings from "@/views/SettingsPages/ShopSettings/ShopSettings.vue";
@@ -20,6 +21,11 @@ import Production from "@/views/GoodsPages/Production.vue";
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
+  {
+    path: "/",
+    name: "Trang-chu",
+    component: Home
+  },
   {
     path: "/overall",
     name: "Tongquan",

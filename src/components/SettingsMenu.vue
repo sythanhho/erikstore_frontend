@@ -2,7 +2,10 @@
   <v-menu offset-y>
     <template v-slot:activator="{ on, attrs }">
       <v-btn depressed color="white" v-bind="attrs" v-on="on" class="text-none">
-        Thiết lập<v-icon>mdi-menu-down</v-icon>
+        <div class="primary--purple">
+          Thiết lập
+        </div>
+        <v-icon color="#6200ee">mdi-menu-down</v-icon>
       </v-btn>
     </template>
     <v-list>

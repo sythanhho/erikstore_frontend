@@ -1,7 +1,7 @@
 <template>
-  <v-main>
+  <v-container fluid>
     <add-good-dialog ref="addGoodDialog" />
-    <v-row>
+    <v-row class="ma-0">
       <side-bar />
       <v-col cols="12" md="10">
         <v-row>
@@ -95,7 +95,7 @@
         </v-data-table>
       </v-col>
     </v-row>
-  </v-main>
+  </v-container>
 </template>
 
 <script>

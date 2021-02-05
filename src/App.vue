@@ -12,15 +12,15 @@
               transition="scale-transition"
               width="40"
             />
-
-            <v-img
-              alt="ErikStore Name"
-              class="shrink mt-1 hidden-sm-and-down"
-              contain
-              min-width="100"
-              src="@/assets/es-name.png"
-              width="100"
-            />
+            <a href="/">
+              <v-img
+                alt="ErikStore Name"
+                class="shrink mt-1 hidden-sm-and-down"
+                contain
+                min-width="100"
+                src="@/assets/es-name.png"
+                width="100"
+            /></a>
           </div>
 
           <v-spacer></v-spacer>
@@ -28,18 +28,24 @@
           <v-spacer></v-spacer>
 
           <v-btn depressed color="white" class="text-none">
-            <v-icon dense color="blue darken-2"> mdi-brush </v-icon>
-            Chủ đề
+            <v-icon dense color="#6200ee"> mdi-brush </v-icon>
+            <div class="primary--purple">
+              Chủ đề
+            </div>
           </v-btn>
 
           <v-btn depressed color="white" class="text-none">
-            <v-icon dense color="blue darken-2"> mdi-face-agent </v-icon>
-            Hỗ trợ
+            <v-icon dense color="#6200ee"> mdi-face-agent </v-icon>
+            <div class="primary--purple">
+              Hỗ trợ
+            </div>
           </v-btn>
 
           <v-btn depressed color="white" class="text-none">
-            <v-icon dense color="blue darken-2"> mdi-cloud-download </v-icon>
-            Tải TeamViewer
+            <v-icon dense color="#6200ee"> mdi-cloud-download </v-icon>
+            <div class="primary--purple">
+              Tải TeamViewer
+            </div>
           </v-btn>
 
           <v-spacer></v-spacer>
@@ -52,9 +58,10 @@
                 v-bind="attrs"
                 v-on="on"
                 class="text-none"
-              >
-                43 Trần Khát Chân
-                <v-icon>mdi-menu-down</v-icon>
+                ><div class="primary--purple">
+                  43 Trần Khát Chân
+                </div>
+                <v-icon color="#6200ee">mdi-menu-down</v-icon>
               </v-btn>
             </template>
             <v-list>
@@ -74,9 +81,10 @@
                 v-bind="attrs"
                 v-on="on"
                 class="text-none"
-              >
-                tạp hóa
-                <v-icon>mdi-menu-down</v-icon>
+                ><div class="primary--purple">
+                  tạp hóa
+                </div>
+                <v-icon color="#6200ee">mdi-menu-down</v-icon>
               </v-btn>
             </template>
             <v-list>
@@ -88,42 +96,54 @@
         </v-layout>
         <v-layout row>
           <v-btn depressed color="white" href="/overall" class="text-none">
-            <v-icon dense color="blue darken-2"> mdi-eye </v-icon>
-            Tổng quan
+            <v-icon dense color="#6200ee"> mdi-eye </v-icon>
+            <div class="primary--purple">
+              Tổng quan
+            </div>
           </v-btn>
           <goods-menu />
 
           <v-btn depressed color="white" class="text-none">
-            <v-icon dense color="blue darken-2">
+            <v-icon dense color="#6200ee">
               mdi-swap-horizontal-bold
             </v-icon>
-            Giao dịch
+            <div class="primary--purple">
+              Giao dịch
+            </div>
           </v-btn>
           <v-btn depressed color="white" class="text-none">
-            <v-icon dense color="blue darken-2"> mdi-human-male </v-icon>
-            Đối tác
+            <v-icon dense color="#6200ee"> mdi-human-male </v-icon>
+            <div class="primary--purple">
+              Đối tác
+            </div>
           </v-btn>
           <v-btn depressed color="white" class="text-none">
-            <v-icon dense color="blue darken-2"> mdi-currency-usd </v-icon>
-            Sổ quỹ
+            <v-icon dense color="#6200ee"> mdi-currency-usd </v-icon>
+            <div class="primary--purple">
+              Sổ quỹ
+            </div>
           </v-btn>
           <v-btn depressed color="white" href="/report" class="text-none">
-            <v-icon dense color="blue darken-2"> mdi-chart-bar </v-icon>
-            Báo cáo
+            <v-icon dense color="#6200ee"> mdi-chart-bar </v-icon>
+            <div class="primary--purple">
+              Báo cáo
+            </div>
           </v-btn>
 
           <v-spacer></v-spacer>
 
           <v-btn depressed color="white" class="text-none">
-            <v-icon dense color="blue darken-2"> mdi-cart </v-icon>
-            Bán hàng
+            <v-icon dense color="#6200ee"> mdi-cart </v-icon>
+            <div class="primary--purple">
+              Bán hàng
+            </div>
           </v-btn></v-layout
         ></v-container
       >
     </v-app-bar>
-    <div style="margin-top:30px">
+    <v-main>
       <router-view />
-    </div>
+    </v-main>
   </v-app>
 </template>
 
