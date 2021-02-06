@@ -3,66 +3,73 @@
     <add-good-dialog ref="addGoodDialog" />
     <v-row class="ma-0">
       <side-bar />
-      <v-col cols="12" md="10">
-        <v-row>
-          <h2>Hàng hóa</h2>
+      <v-col cols="10">
+        <v-row justify="space-between" class="d-flex flex-row">
+          <v-col cols="1" class="flex-grow-1" style="max-width:100%">
+            <h2>Hàng hóa</h2></v-col
+          >
 
-          <v-spacer />
+          <!-- <v-spacer /> -->
+          <v-col
+            cols="1"
+            class="flex-grow-0 flex-shrink-1"
+            style="min-width:482px"
+          >
+            <v-menu offset-y>
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn depressed v-bind="attrs" v-on="on" class="text-none">
+                  <v-icon>mdi-plus-thick</v-icon>
+                  Thêm mới
+                  <v-icon>mdi-menu-down</v-icon>
+                </v-btn>
+              </template>
+              <v-list>
+                <v-list-item @click="ShowAddGoodDialog">
+                  <v-list-item-title
+                    ><v-icon>mdi-plus-thick</v-icon>Thêm hàng
+                    hóa</v-list-item-title
+                  >
+                </v-list-item>
+                <v-list-item>
+                  <v-list-item-title
+                    ><v-icon>mdi-plus-thick</v-icon>Thêm dịch
+                    vụ</v-list-item-title
+                  >
+                </v-list-item>
+                <v-list-item>
+                  <v-list-item-title
+                    ><v-icon>mdi-plus-thick</v-icon>Thêm Combo - đóng
+                    gói</v-list-item-title
+                  >
+                </v-list-item>
+              </v-list>
+            </v-menu>
 
-          <v-menu offset-y>
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn depressed v-bind="attrs" v-on="on" class="text-none">
-                <v-icon>mdi-plus-thick</v-icon>
-                Thêm mới
-                <v-icon>mdi-menu-down</v-icon>
-              </v-btn>
-            </template>
-            <v-list>
-              <v-list-item @click="ShowAddGoodDialog">
-                <v-list-item-title
-                  ><v-icon>mdi-plus-thick</v-icon>Thêm hàng
-                  hóa</v-list-item-title
-                >
-              </v-list-item>
-              <v-list-item>
-                <v-list-item-title
-                  ><v-icon>mdi-plus-thick</v-icon>Thêm dịch
-                  vụ</v-list-item-title
-                >
-              </v-list-item>
-              <v-list-item>
-                <v-list-item-title
-                  ><v-icon>mdi-plus-thick</v-icon>Thêm Combo - đóng
-                  gói</v-list-item-title
-                >
-              </v-list-item>
-            </v-list>
-          </v-menu>
+            <v-btn depressed class="text-none">
+              <v-icon> mdi-application-import </v-icon>
+              Import
+            </v-btn>
 
-          <v-btn depressed class="text-none">
-            <v-icon> mdi-application-import </v-icon>
-            Import
-          </v-btn>
+            <v-btn depressed class="text-none">
+              <v-icon> mdi-application-export </v-icon>
+              Xuất file
+            </v-btn>
 
-          <v-btn depressed class="text-none">
-            <v-icon> mdi-application-export </v-icon>
-            Xuất file
-          </v-btn>
+            <v-menu offset-y>
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn depressed v-bind="attrs" v-on="on" class="text-none">
+                  <v-icon>mdi-dots-grid</v-icon>
 
-          <v-menu offset-y>
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn depressed v-bind="attrs" v-on="on" class="text-none">
-                <v-icon>mdi-dots-grid</v-icon>
-
-                <v-icon>mdi-menu-down</v-icon>
-              </v-btn>
-            </template>
-            <v-list>
-              <v-list-item>
-                <v-list-item-title></v-list-item-title>
-              </v-list-item>
-            </v-list>
-          </v-menu>
+                  <v-icon>mdi-menu-down</v-icon>
+                </v-btn>
+              </template>
+              <v-list>
+                <v-list-item>
+                  <v-list-item-title></v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
+          </v-col>
         </v-row>
         <v-data-table
           v-model="selected"

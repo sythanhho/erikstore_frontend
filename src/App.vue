@@ -4,14 +4,15 @@
       <v-container fluid>
         <v-layout row>
           <div class="d-flex align-center">
-            <v-img
-              alt="Vuetify Logo"
-              class="shrink mr-2"
-              contain
-              src="@/assets/es-logo.png"
-              transition="scale-transition"
-              width="40"
-            />
+            <a href="/">
+              <v-img
+                alt="Vuetify Logo"
+                class="shrink mr-2"
+                contain
+                src="@/assets/es-logo.png"
+                transition="scale-transition"
+                width="40"
+            /></a>
             <a href="/">
               <v-img
                 alt="ErikStore Name"

@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="12" md="2">
+  <v-col cols="2">
     <v-dialog v-model="groupEditDialog" width="500">
       <v-card>
         <v-container class="pa-8">
@@ -255,7 +255,7 @@ export default {
   },
   data() {
     return {
-      expansionPanels: [5, 6],
+      expansionPanels: [5],
       radioGroup: 1,
       defaultValue: 15,
       items: [5, 10, 15, 20],
