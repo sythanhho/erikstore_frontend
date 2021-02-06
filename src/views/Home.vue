@@ -102,6 +102,8 @@
                   absolute
                   style="width:100%;height:100%"
                   class="my-overlay"
+                  color="teal"
+                  opacity=".9"
                   dark
                 >
                   <div
@@ -110,40 +112,36 @@
                   >
                     <v-btn
                       depressed
-                      flat
+                      text
                       tile
                       style="height:25%;width:100%"
                       class="flex=grow-1 text-h4"
-                      color="teal"
                       href="/categories"
                       ><div style="color:mtext">
                         <v-icon x-large>mdi-dots-grid</v-icon>Danh mục
                       </div></v-btn
                     ><v-btn
                       depressed
-                      flat
+                      text
                       tile
                       style="height:25%;width:100%"
                       class="flex=grow-1 text-h4"
-                      color="teal"
                       ><v-icon x-large>mdi-tag-multiple</v-icon>Thiết lập
                       giá</v-btn
                     ><v-btn
                       depressed
-                      flat
+                      text
                       tile
                       style="height:25%;width:100%"
                       class="flex=grow-1 text-h4"
-                      color="teal"
                       ><v-icon x-large>mdi-checkbox-marked</v-icon>Kiểm
                       kho</v-btn
                     ><v-btn
                       depressed
-                      flat
+                      text
                       tile
                       style="height:25%;width:100%"
                       class="flex=grow-1 text-h4"
-                      color="teal"
                       ><v-icon x-large>mdi-cog</v-icon>Sản xuất</v-btn
                     >
                   </div>

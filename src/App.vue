@@ -146,7 +146,7 @@
             @click="ToggleDarkMode"
             persistent-hint
           ></v-switch> -->
-          <v-btn icon @click="ToggleDarkMode">
+          <v-btn icon @click="ToggleDarkMode" width="35" height="35">
             <v-icon>mdi-theme-light-dark</v-icon>
           </v-btn>
         </v-layout></v-container

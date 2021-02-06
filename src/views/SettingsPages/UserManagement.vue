@@ -179,11 +179,19 @@
                           </v-row>
                           <v-card-actions>
                             <v-spacer></v-spacer>
-                            <v-btn color="primary" text>
+                            <v-btn
+                              color="primary"
+                              text
+                              @click="ShowAddUserDialog"
+                            >
                               <v-icon>mdi-content-save</v-icon>
                               Cập nhập
                             </v-btn>
-                            <v-btn color="primary" text>
+                            <v-btn
+                              color="primary"
+                              text
+                              @click="ShowAddUserDialog"
+                            >
                               <v-icon>mdi-content-save</v-icon>
                               Sao chép
                             </v-btn>
