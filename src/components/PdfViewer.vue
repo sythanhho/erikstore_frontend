@@ -1,7 +1,7 @@
 <template>
   <div>
     <pdf
-      src="react.pdf"
+      :src="source"
       @num-pages="pageCount = $event"
       @page-loaded="currentPage = $event"
     ></pdf>
@@ -12,6 +12,9 @@
 import pdf from "vue-pdf";
 
 export default {
+  props: {
+    source: String
+  },
   components: {
     pdf
   },

@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-tabs v-model="tab" align-with-title light color="#6200ee">
+    <v-tabs v-model="tab" align-with-title>
       <v-tab class="text-none">Thiết lập cửa hàng</v-tab>
       <v-tab-item><shop-info /></v-tab-item>
 

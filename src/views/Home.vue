@@ -17,9 +17,9 @@
           depressed
           width="100%"
           height="100%"
-          color="white"
           tile
           href="/overall"
+          color="btn"
           ><v-container class="d-flex flex-column align-center">
             <v-row class="mb-0">
               <v-img
@@ -69,9 +69,9 @@
               flat
               width="100%"
               height="100%"
-              color="white"
               tile
               class="pa-0"
+              color="card"
             >
               <v-container
                 class="d-flex flex-column align-center justify-center"
@@ -100,9 +100,9 @@
                 <v-overlay
                   v-if="hover"
                   absolute
-                  color="#036358"
                   style="width:100%;height:100%"
                   class="my-overlay"
+                  dark
                 >
                   <div
                     class="d-flex flex-column"
@@ -113,17 +113,19 @@
                       flat
                       tile
                       style="height:25%;width:100%"
-                      light
                       class="flex=grow-1 text-h4"
+                      color="teal"
                       href="/categories"
-                      ><v-icon x-large>mdi-dots-grid</v-icon>Danh mục</v-btn
+                      ><div style="color:mtext">
+                        <v-icon x-large>mdi-dots-grid</v-icon>Danh mục
+                      </div></v-btn
                     ><v-btn
                       depressed
                       flat
                       tile
                       style="height:25%;width:100%"
-                      light
                       class="flex=grow-1 text-h4"
+                      color="teal"
                       ><v-icon x-large>mdi-tag-multiple</v-icon>Thiết lập
                       giá</v-btn
                     ><v-btn
@@ -131,8 +133,8 @@
                       flat
                       tile
                       style="height:25%;width:100%"
-                      light
                       class="flex=grow-1 text-h4"
+                      color="teal"
                       ><v-icon x-large>mdi-checkbox-marked</v-icon>Kiểm
                       kho</v-btn
                     ><v-btn
@@ -140,8 +142,8 @@
                       flat
                       tile
                       style="height:25%;width:100%"
-                      light
                       class="flex=grow-1 text-h4"
+                      color="teal"
                       ><v-icon x-large>mdi-cog</v-icon>Sản xuất</v-btn
                     >
                   </div>
@@ -159,9 +161,9 @@
           depressed
           width="100%"
           height="100%"
-          color="white"
           tile
           href="/overall"
+          color="btn"
           ><v-container class="d-flex flex-column align-center">
             <v-row class="mb-0">
               <v-img
@@ -190,9 +192,9 @@
           depressed
           width="100%"
           height="100%"
-          color="white"
           tile
           href="/overall"
+          color="btn"
           ><v-container class="d-flex flex-column align-center">
             <v-row class="mb-0">
               <v-img
@@ -215,9 +217,9 @@
           depressed
           width="100%"
           height="100%"
-          color="white"
           tile
           href="/overall"
+          color="btn"
           ><v-container class="d-flex flex-column align-center">
             <v-row class="mb-0">
               <v-img
@@ -240,9 +242,9 @@
           depressed
           width="100%"
           height="100%"
-          color="white"
           tile
           href="/overall"
+          color="btn"
           ><v-container class="d-flex flex-column align-center">
             <v-row class="mb-0">
               <v-img
@@ -269,9 +271,5 @@ export default {};
 .my-overlay >>> .v-overlay__content {
   width: 100%;
   height: 100%;
-}
-
-h1 {
-  color: grey;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <v-card height="100%">
-    <v-tabs v-model="tab" align-with-title light color="#6200ee">
+    <v-tabs v-model="tab" align-with-title>
       <div class="d-flex justify-center align-center" style="width:100px">
         <h2>Mẫu in</h2>
       </div>
@@ -26,10 +26,13 @@
            bullist numlist outdent indent | removeformat | help'
                 }"
               />
-              <v-btn @click="LogContent">Alo!</v-btn>
+              <v-btn @click="LogContent">Alo!</v-btn
+              ><v-btn @click="exportToPDF">Download!</v-btn>
             </v-col>
             <v-col>
-              <pdf-viewer />
+              <!-- <pdf-viewer /> -->
+              <!-- <iframe :src="pdfFile" width="100%" height="100%" /> -->
+              <pdf-viewer :source="pdfFile" />
             </v-col>
           </v-row>
         </v-container>
@@ -64,7 +67,8 @@
 
 <script>
 import Editor from "@tinymce/tinymce-vue";
-
+// import VueHtml2pdf from "vue-html2pdf";
+import html2pdf from "html2pdf.js";
 import PdfViewer from "@/components/PdfViewer.vue";
 
 export default {
@@ -75,10 +79,34 @@ export default {
   name: "Printing-Management",
   data() {
     return {
+      pdfFile: null,
       tab: null,
+      htmlToPdfOptions: {
+        margin: 1,
+
+        filename: `hehehe.pdf`,
+
+        image: {
+          type: "jpeg",
+          quality: 0.98
+        },
+
+        enableLinks: false,
+
+        html2canvas: {
+          scale: 1,
+          useCORS: true
+        },
+
+        jsPDF: {
+          unit: "in",
+          format: "a4",
+          orientation: "portrait"
+        }
+      },
       name: "@/assets/react.js",
       path: "lib/pdfjs-2.3.200-dist/web/viewer.html",
-      editorContent: `<table style="border-collapse: collapse; width: 100%; border-style: none;" border="1">
+      editorContent: `<table style="border-collapse: collapse; width: 100%; border-style: none;" border="0">
 <tbody>
 <tr>
 <td style="width: 97.0695%;">T&ecirc;n cửa h&agrave;ng</td>
@@ -105,6 +133,27 @@ export default {
   methods: {
     LogContent() {
       console.log(this.editorContent);
+    },
+    async exportToPDF() {
+      const pdfContent = this.editorContent;
+      const options = {
+        margin: 1,
+        filename: "myfile.pdf",
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: "in", format: "letter", orientation: "portrait" }
+      };
+      // let pdfBlobUrl = null;
+      const html2PdfSetup = html2pdf()
+        .set(options)
+        .from(pdfContent);
+      this.pdfFile = await html2PdfSetup.output("bloburl");
+      // pdfBlobUrl = this.pdfFile;
+      // html2pdf()
+      //   .from(element)
+      //   .set(opt)
+      //   .toImg();
+      // this.$refs.html2Pdf.generatePdf();
     }
   }
 };

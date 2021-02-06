@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app height="90" color="white" light rounded>
+    <v-app-bar app height="90" rounded>
       <v-container fluid>
         <v-layout row>
           <div class="d-flex align-center">
@@ -27,7 +27,7 @@
           <v-spacer></v-spacer>
           <v-spacer></v-spacer>
 
-          <v-btn depressed color="white" class="text-none">
+          <!-- <v-btn depressed color="white" class="text-none">
             <v-icon dense color="#6200ee"> mdi-brush </v-icon>
             <div class="primary--purple">
               Chủ đề
@@ -46,11 +46,11 @@
             <div class="primary--purple">
               Tải TeamViewer
             </div>
-          </v-btn>
+          </v-btn> -->
 
           <v-spacer></v-spacer>
 
-          <v-menu offset-y>
+          <!-- <v-menu offset-y>
             <template v-slot:activator="{ on, attrs }">
               <v-btn
                 depressed
@@ -69,11 +69,11 @@
                 <v-list-item-title>{{ item.title }}</v-list-item-title>
               </v-list-item>
             </v-list>
-          </v-menu>
+          </v-menu> -->
 
           <settings-menu />
 
-          <v-menu offset-y>
+          <!-- <v-menu offset-y>
             <template v-slot:activator="{ on, attrs }">
               <v-btn
                 depressed
@@ -92,18 +92,18 @@
                 <v-list-item-title>{{ item.title }}</v-list-item-title>
               </v-list-item>
             </v-list>
-          </v-menu>
+          </v-menu> -->
         </v-layout>
         <v-layout row>
-          <v-btn depressed color="white" href="/overall" class="text-none">
+          <!-- <v-btn depressed color="white" href="/overall" class="text-none">
             <v-icon dense color="#6200ee"> mdi-eye </v-icon>
             <div class="primary--purple">
               Tổng quan
             </div>
-          </v-btn>
+          </v-btn> -->
           <goods-menu />
 
-          <v-btn depressed color="white" class="text-none">
+          <!-- <v-btn depressed color="white" class="text-none">
             <v-icon dense color="#6200ee">
               mdi-swap-horizontal-bold
             </v-icon>
@@ -128,17 +128,27 @@
             <div class="primary--purple">
               Báo cáo
             </div>
-          </v-btn>
+          </v-btn> -->
 
           <v-spacer></v-spacer>
 
-          <v-btn depressed color="white" class="text-none">
+          <!-- <v-btn depressed color="white" class="text-none">
             <v-icon dense color="#6200ee"> mdi-cart </v-icon>
             <div class="primary--purple">
               Bán hàng
             </div>
-          </v-btn></v-layout
-        ></v-container
+          </v-btn> -->
+          <!-- <v-switch
+            v-model="$vuetify.theme.dark"
+            inset
+            label="Dùng chủ đề tối"
+            @click="ToggleDarkMode"
+            persistent-hint
+          ></v-switch> -->
+          <v-btn icon @click="ToggleDarkMode">
+            <v-icon>mdi-theme-light-dark</v-icon>
+          </v-btn>
+        </v-layout></v-container
       >
     </v-app-bar>
     <v-main>
@@ -164,7 +174,29 @@ export default Vue.extend({
       { title: "Click Me" },
       { title: "Click Me 2" }
     ]
-  })
+  }),
+  methods: {
+    ToggleDarkMode: function() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+      localStorage.setItem("dark_theme", this.$vuetify.theme.dark.toString());
+    }
+  },
+  mounted() {
+    const theme = localStorage.getItem("dark_theme");
+    if (theme) {
+      if (theme === "true") {
+        this.$vuetify.theme.dark = true;
+      } else {
+        this.$vuetify.theme.dark = false;
+      }
+    } else if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      this.$vuetify.theme.dark = true;
+      localStorage.setItem("dark_theme", this.$vuetify.theme.dark.toString());
+    }
+  }
 });
 </script>
 

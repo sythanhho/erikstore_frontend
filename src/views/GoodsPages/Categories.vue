@@ -11,13 +11,7 @@
 
           <v-menu offset-y>
             <template v-slot:activator="{ on, attrs }">
-              <v-btn
-                depressed
-                color="white"
-                v-bind="attrs"
-                v-on="on"
-                class="text-none"
-              >
+              <v-btn depressed v-bind="attrs" v-on="on" class="text-none">
                 <v-icon>mdi-plus-thick</v-icon>
                 Thêm mới
                 <v-icon>mdi-menu-down</v-icon>
@@ -45,25 +39,19 @@
             </v-list>
           </v-menu>
 
-          <v-btn depressed color="white" class="text-none">
+          <v-btn depressed class="text-none">
             <v-icon> mdi-application-import </v-icon>
             Import
           </v-btn>
 
-          <v-btn depressed color="white" class="text-none">
+          <v-btn depressed class="text-none">
             <v-icon> mdi-application-export </v-icon>
             Xuất file
           </v-btn>
 
           <v-menu offset-y>
             <template v-slot:activator="{ on, attrs }">
-              <v-btn
-                depressed
-                color="white"
-                v-bind="attrs"
-                v-on="on"
-                class="text-none"
-              >
+              <v-btn depressed v-bind="attrs" v-on="on" class="text-none">
                 <v-icon>mdi-dots-grid</v-icon>
 
                 <v-icon>mdi-menu-down</v-icon>

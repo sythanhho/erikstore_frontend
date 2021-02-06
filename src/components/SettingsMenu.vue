@@ -1,11 +1,11 @@
 <template>
   <v-menu offset-y>
     <template v-slot:activator="{ on, attrs }">
-      <v-btn depressed color="white" v-bind="attrs" v-on="on" class="text-none">
-        <div class="primary--purple">
+      <v-btn depressed v-bind="attrs" v-on="on" class="text-none">
+        <div>
           Thiết lập
         </div>
-        <v-icon color="#6200ee">mdi-menu-down</v-icon>
+        <v-icon>mdi-menu-down</v-icon>
       </v-btn>
     </template>
     <v-list>
