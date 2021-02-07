@@ -4,7 +4,7 @@
       <v-container fluid>
         <v-layout row>
           <div class="d-flex align-center">
-            <a href="/">
+            <router-link to="/">
               <v-img
                 alt="Vuetify Logo"
                 class="shrink mr-2"
@@ -12,8 +12,8 @@
                 src="@/assets/es-logo.png"
                 transition="scale-transition"
                 width="40"
-            /></a>
-            <a href="/">
+            /></router-link>
+            <router-link to="/">
               <v-img
                 alt="ErikStore Name"
                 class="shrink mt-1 hidden-sm-and-down"
@@ -21,7 +21,7 @@
                 min-width="100"
                 src="@/assets/es-name.png"
                 width="100"
-            /></a>
+            /></router-link>
           </div>
 
           <v-spacer></v-spacer>

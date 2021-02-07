@@ -18,7 +18,7 @@
           width="100%"
           height="100%"
           tile
-          href="/overall"
+          to="/overall"
           color="btn"
           ><v-container class="d-flex flex-column align-center">
             <v-row class="mb-0">
@@ -47,7 +47,7 @@
           height="100%"
           color="white"
           tile
-          href="/overall"
+          to="/overall"
           ><v-container class="d-flex flex-column align-center">
             <v-row class="mb-0">
               <v-img
@@ -116,7 +116,7 @@
                       tile
                       style="height:25%;width:100%"
                       class="flex=grow-1 text-h4"
-                      href="/categories"
+                      to="/categories"
                       ><div style="color:mtext">
                         <v-icon x-large>mdi-dots-grid</v-icon>Danh mục
                       </div></v-btn
@@ -160,7 +160,7 @@
           width="100%"
           height="100%"
           tile
-          href="/overall"
+          to="/overall"
           color="btn"
           ><v-container class="d-flex flex-column align-center">
             <v-row class="mb-0">
@@ -191,7 +191,7 @@
           width="100%"
           height="100%"
           tile
-          href="/overall"
+          to="/overall"
           color="btn"
           ><v-container class="d-flex flex-column align-center">
             <v-row class="mb-0">
@@ -216,7 +216,7 @@
           width="100%"
           height="100%"
           tile
-          href="/overall"
+          to="/overall"
           color="btn"
           ><v-container class="d-flex flex-column align-center">
             <v-row class="mb-0">
@@ -241,7 +241,7 @@
           width="100%"
           height="100%"
           tile
-          href="/overall"
+          to="/overall"
           color="btn"
           ><v-container class="d-flex flex-column align-center">
             <v-row class="mb-0">
