@@ -1,0 +1,21 @@
+{
+    "revenueCard": {
+        "title": "revenu quotidien"
+    },
+    "transactionCard": {
+        "title": "Transaction Récente"
+    },
+    "title": {
+        "motto": "Toujours avec vous"
+    },
+    "site": {
+        "dashboard": {
+            "title": "Tableau de bord"
+        }
+    },
+    "card": {
+        "activity": {
+            "title": "Activités récentes"
+        }
+    }
+}

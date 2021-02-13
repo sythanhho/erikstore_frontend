@@ -1,0 +1,21 @@
+{
+    "revenueCard": {
+        "title": "Lợi nhuận ngày"
+    },
+    "transactionCard": {
+        "title": "Giao dịch gần đây"
+    },
+    "title": {
+        "motto": "Luôn luôn bên bạn"
+    },
+    "site": {
+        "dashboard": {
+            "title": "Tổng quan"
+        }
+    },
+    "card": {
+        "activity": {
+            "title": "Hoạt động gần đây"
+        }
+    }
+}

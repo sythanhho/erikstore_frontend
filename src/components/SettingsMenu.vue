@@ -1,11 +1,12 @@
 <template>
   <v-menu offset-y>
     <template v-slot:activator="{ on, attrs }">
-      <v-btn depressed v-bind="attrs" v-on="on" class="text-none">
-        <div>
+      <v-btn icon depressed v-bind="attrs" v-on="on" class="text-none">
+        <!-- <div>
           Thiết lập
         </div>
-        <v-icon>mdi-menu-down</v-icon>
+        <v-icon>mdi-menu-down</v-icon> -->
+        <v-icon>mdi-cog</v-icon>
       </v-btn>
     </template>
     <v-list>

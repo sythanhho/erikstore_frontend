@@ -1,18 +1,13 @@
 <template>
   <v-container
-    fluid
-    style="height:100%;background-color:cyan"
-    class="d-flex flex-column pa-0"
+    style="height:100%"
+    class="d-flex flex-column elevation-5 rounded-lg"
   >
     <v-row
       style="background-color:green;max-height:100%"
       class="flex-grow-1 d-flex flex-row ma-0"
     >
-      <v-col
-        cols="1"
-        class="flex-grow-1 pa-0"
-        style="background-color:red;max-width:100%"
-      >
+      <v-col cols="12" sm="6" md="4" class="pa-0">
         <v-btn
           depressed
           width="100%"
@@ -36,33 +31,7 @@
           ></v-btn
         >
       </v-col>
-      <v-col
-        cols="1"
-        class="flex-grow-1 pa-0"
-        style="background-color:green;max-width:100%"
-      >
-        <!-- <v-btn
-          depressed
-          width="100%"
-          height="100%"
-          color="white"
-          tile
-          to="/overall"
-          ><v-container class="d-flex flex-column align-center">
-            <v-row class="mb-0">
-              <v-img
-                src="@/assets/good.png"
-                max-height="200px"
-                max-width="200px"
-              ></v-img>
-            </v-row>
-            <v-row>
-              <h1>
-                Hàng hóa
-              </h1>
-            </v-row></v-container
-          ></v-btn
-        > -->
+      <v-col cols="12" sm="6" md="4" class="pa-0">
         <v-hover style="width:100%;height:100%">
           <template v-slot:default="{ hover }" style="width:100%;height:100%">
             <v-card
@@ -151,10 +120,7 @@
           </template>
         </v-hover>
       </v-col>
-      <v-col
-        cols="1"
-        class="flex-grow-1 pa-0"
-        style="background-color:blue;max-width:100%"
+      <v-col cols="12" sm="6" md="4" class="pa-0"
         ><v-btn
           depressed
           width="100%"
@@ -178,14 +144,12 @@
           ></v-btn
         ></v-col
       >
-    </v-row>
+      <!-- </v-row>
     <v-row
       style="background-color:blue;max-height:100%"
       class="flex-grow-1 d-flex flex-row ma-0"
-      ><v-col
-        cols="1"
-        class="flex-grow-1 pa-0"
-        style="background-color:yellow;max-width:100%"
+      > -->
+      <v-col cols="12" sm="6" md="4" class="pa-0"
         ><v-btn
           depressed
           width="100%"
@@ -207,10 +171,7 @@
           ></v-btn
         ></v-col
       >
-      <v-col
-        cols="1"
-        class="flex-grow-1 pa-0"
-        style="background-color:pink;max-width:100%"
+      <v-col cols="12" sm="6" md="4" class="pa-0"
         ><v-btn
           depressed
           width="100%"
@@ -232,10 +193,7 @@
           ></v-btn
         ></v-col
       >
-      <v-col
-        cols="1"
-        class="flex-grow-1 pa-0"
-        style="background-color:orange;max-width:100%"
+      <v-col cols="12" sm="6" md="4" class="pa-0"
         ><v-btn
           depressed
           width="100%"

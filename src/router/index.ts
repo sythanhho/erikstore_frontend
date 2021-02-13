@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "@/views/Home.vue";
-import Overview from "@/views/Overview.vue";
+import Dashboard from "@/views/Dashboard.vue";
 import Report from "@/views/Report.vue";
 import ShopSettings from "@/views/SettingsPages/ShopSettings/ShopSettings.vue";
 import PrintingManagement from "@/views/SettingsPages/PrintingManagement.vue";
@@ -24,12 +24,13 @@ const routes: Array<RouteConfig> = [
   {
     path: "/",
     name: "Trang-chu",
+    redirect: "/dashboard",
     component: Home
   },
   {
-    path: "/overall",
+    path: "/dashboard",
     name: "Tongquan",
-    component: Overview
+    component: Dashboard
   },
   {
     path: "/report",

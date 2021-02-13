@@ -16,14 +16,17 @@ export default new Vuetify({
         warning: "#FFC107",
         btn: "#fff",
         card: "#fff",
-        mtext: "#000"
+        mtext: "#000",
+        appbg: "f5f6fa"
       },
       dark: {
         primary: "#03dac5",
         card: "272727",
         mtext: "#fff",
-        text: "#03dac5"
+        text: "#03dac5",
+        appbg: "#03dac5"
       }
-    }
+    },
+    options: { customProperties: true }
   }
 });

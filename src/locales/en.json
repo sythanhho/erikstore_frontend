@@ -1,0 +1,24 @@
+{
+    "revenueCard": {
+        "title": "Daily Revenue"
+    },
+    "transactionCard": {
+        "title": "Recent Transaction"
+    },
+    "title": {
+        "motto": "Always with you"
+    },
+    "site": {
+        "dashboard": {
+            "title": "Dashboard"
+        },
+        "product": {
+            "title": "Product"
+        }
+    },
+    "card": {
+        "activity": {
+            "title": "Recent activities"
+        }
+    }
+}
