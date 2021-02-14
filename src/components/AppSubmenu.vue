@@ -6,7 +6,7 @@
           {{ item.label }}
         </v-list-item-title>
       </v-list-item>
-      <v-list-group v-if="!item.to" :key="i">
+      <v-list-group v-if="!item.to" :key="i" no-action class="nav-menu">
         <template v-slot:activator>
           <v-list-item-title>{{ item.label }}</v-list-item-title>
         </template>
@@ -72,4 +72,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.v-list-group > .v-list-group__items {
+  background-color: aqua !important;
+}
+</style>

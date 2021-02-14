@@ -1,3 +1,7 @@
-.primary--purple {
-    color: primary;
+.v-list-group--active {
+  background-color: aqua;
+}
+
+.v-list-group__header {
+    margin-bottom: 0px !important;
 }
