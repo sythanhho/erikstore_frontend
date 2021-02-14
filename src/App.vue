@@ -269,7 +269,7 @@ export default Vue.extend({
   beforeDestroy() {
     if (typeof window === "undefined") return;
 
-    window.removeEventListener("resize", this.onResize, { passive: true });
+    window.removeEventListener("resize", this.onResize, true);
   },
   methods: {
     ToggleDarkMode: function() {
