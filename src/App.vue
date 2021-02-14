@@ -172,16 +172,20 @@
             <v-icon>mdi-theme-light-dark</v-icon>
           </v-btn>
         </v-layout> -->
-      <!-- </v-container> -->
-    </v-app-bar>
-    <v-navigation-drawer
-      app
-      clipped
-      floating
-      class="elevation-3"
-      v-model="drawer"
-    >
-      <!-- <v-list-item>
+      <!-- </v-container> --> </v-app-bar
+    ><v-card>
+      <v-navigation-drawer
+        app
+        clipped
+        floating
+        class="elevation-3"
+        v-model="drawer"
+      >
+        <v-app-bar-nav-icon
+          @click.stop="drawer = !drawer"
+          v-show="notLarge"
+        ></v-app-bar-nav-icon>
+        <!-- <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="title">
             Erik Store
@@ -197,7 +201,7 @@
 
       <v-divider></v-divider> -->
 
-      <v-list nav>
+        <!-- <v-list nav>
         <v-list-item v-show="notLarge">
           <v-app-bar-nav-icon
             @click.stop="drawer = !drawer"
@@ -213,24 +217,12 @@
               <v-list-item-title>{{ $t(item.title) }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <!-- <v-list-item>
-            <v-expansion-panels>
-              <v-expansion-panel>
-                <v-expansion-panel-header>
-                  Item
-                </v-expansion-panel-header>
-                <v-expansion-panel-content>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </v-expansion-panel-content>
-              </v-expansion-panel>
-            </v-expansion-panels>
-          </v-list-item> -->
         </v-list-item-group>
-      </v-list>
-    </v-navigation-drawer>
+      </v-list> -->
+
+        <app-menu :model="menu" @menuitem-click="onMenuItemClick" />
+      </v-navigation-drawer>
+    </v-card>
     <v-main>
       <router-view />
     </v-main>
@@ -240,14 +232,42 @@
 <script lang="ts">
 import Vue from "vue";
 import SettingsMenu from "@/components/SettingsMenu.vue";
+import AppMenu from "@/components/AppMenu.vue";
 // import GoodsMenu from "@/components/GoodsMenu.vue";
 
 export default Vue.extend({
   name: "App",
 
-  components: { SettingsMenu },
+  components: { SettingsMenu, AppMenu },
 
   data: () => ({
+    selectedItem: 1,
+    items1: [
+      { text: "Real-Time", icon: "mdi-clock" },
+      { text: "Audience", icon: "mdi-account" },
+      { text: "Conversions", icon: "mdi-flag" }
+    ],
+    overlayMenuActive: false,
+    mobileMenuActive: false,
+    menu: [
+      { label: "Dashboard", icon: "mdi-view-dashboard", to: "/dashboard" },
+      {
+        label: "Product",
+        icon: "mdi-cube",
+        items: [
+          {
+            label: "Categories",
+            icon: "pi pi-fw pi-id-card",
+            to: "/categories"
+          },
+          {
+            label: "Price Settings",
+            icon: "pi pi-fw pi-check-square",
+            to: "/price-settings"
+          }
+        ]
+      }
+    ],
     drawer: true,
     notLarge: false,
     items: [{ title: "site.dashboard.title" }, { title: "site.product.title" }],
@@ -278,6 +298,12 @@ export default Vue.extend({
     },
     onResize() {
       this.notLarge = window.innerWidth < 1264;
+    },
+    onMenuItemClick(event: { item: { items: any } }) {
+      if (event.item && !event.item.items) {
+        this.overlayMenuActive = false;
+        this.mobileMenuActive = false;
+      }
     }
   },
   mounted() {
